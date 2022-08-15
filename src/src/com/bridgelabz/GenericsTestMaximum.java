@@ -22,8 +22,15 @@ public class GenericsTestMaximum<T extends Comparable<T>> {
     public static <T extends Comparable<T>> T testMaximum(ArrayList<T> list) {
         Collections.sort(list);
         T maxValue = list.get(list.size() - 1);
-        System.out.println("Maximum : " + maxValue);
+        showMaxValue(list, maxValue);
         return maxValue;
+    }
+    public static <T> void showMaxValue(ArrayList<T> list, T maxValue) {
+        System.out.println("\nInput values : ");
+        for (T value : list) {
+            System.out.print(value + " , ");
+        }
+        System.out.println("\nMaximum : " + maxValue);
     }
 
     public static void main(String[] args) {
